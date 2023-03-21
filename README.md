@@ -20,7 +20,7 @@ Register your application by following the steps at [Register your app with the 
 
 ### 2.2 Create an AuthenticationProvider object
 
-An instance of the **MicrosoftGraphServiceClient** class handles building client. To create a new instance of this class, you need to provide an instance of **AuthenticationProvider**, which can authenticate requests to Microsoft Graph.
+An instance of the **GraphServiceClient** class handles building client. To create a new instance of this class, you need to provide an instance of **AuthenticationProvider**, which can authenticate requests to Microsoft Graph.
 
 For an example of how to get an authentication provider, see [choose a Microsoft Graph authentication provider](https://learn.microsoft.com/graph/sdks/choose-authentication-providers?tabs=Ruby).
 
@@ -37,18 +37,18 @@ authentication_provider = MicrosoftGraphCore::Authentication::OAuthAuthenticatio
 
 ### 2.3 Get a Graph Service Client and Adapter object
 
-You must get a **MicrosoftGraphServiceClient** object to make requests against the service.
+You must get a **GraphServiceClient** object to make requests against the service.
 
 ```ruby
 require "microsoft_graph"
 
-adapter = MicrosoftGraph::MicrosoftGraphRequestAdapter.new(authentication_provider)
-client = MicrosoftGraph::MicrosoftGraphServiceClient.new(adapter)
+adapter = MicrosoftGraph::GraphRequestAdapter.new(authentication_provider)
+client = MicrosoftGraph::GraphServiceClient.new(adapter)
 ```
 
 ## 3. Make requests against the service
 
-After you have a **MicrosoftGraphServiceClient** that is authenticated, you can begin making calls against the service. The requests against the service look like our [REST API](https://learn.microsoft.com/graph/api/overview?view=graph-rest-1.0).
+After you have a **GraphServiceClient** that is authenticated, you can begin making calls against the service. The requests against the service look like our [REST API](https://learn.microsoft.com/graph/api/overview?view=graph-rest-1.0).
 
 ### 3.1 Get the user's drive
 
